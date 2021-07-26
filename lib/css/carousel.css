@@ -1,0 +1,61 @@
+/** CAROUSEL_CSS
+    Carousel
+ */
+
+.product-slider #carousel { 
+	border: none;
+	margin: 0;
+}
+
+.product-slider #thumbcarousel { 
+	margin: 12px 0 0; 
+	padding: 0 45px; 
+}
+
+.product-slider #thumbcarousel .item { 
+	text-align: center; 
+}
+
+.product-slider #thumbcarousel .item .thumb { 
+	border: none; /*1px solid #a0a0a0;*/
+	width: 20%; 
+	margin: 0 2%; 
+	display: inline-block; 
+	vertical-align: middle; 
+	cursor: pointer; 
+	max-width: 98px; 
+}
+
+/* highlighted thumbnail */
+.product-slider #thumbcarousel .item .thumb:hover { 
+	border: 1px solid #a0a0a0;
+	/*border-color: black;*/
+}
+
+.product-slider .item img { width: 100%; height: auto; }
+
+/*.carousel-control:hover, .carousel-control:focus, .carousel-control:active { color: #333; }
+*/
+
+/*.carousel-caption, .carousel-control .fa { 
+	font: normal normal normal 30px/26px FontAwesome; 
+}*/
+.carousel-control span { 
+	/*background-color: rgba(0, 0, 0, 0); */
+	bottom: auto;
+	font-size: 20px; 
+	position: absolute;
+ 	top: 58%;
+ 	-ms-transform: translateY(-50%);
+ 	transform: translateY(-50%);
+}
+.carousel-control .glyphicon { 
+	font-size: 80%;
+}
+
+.vertical-center {
+ 	position: absolute;
+ 	top: 58%;
+ 	-ms-transform: translateY(-50%);
+ 	transform: translateY(-50%);
+}
