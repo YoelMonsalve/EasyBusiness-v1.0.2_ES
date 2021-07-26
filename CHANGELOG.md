@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - DB name pasa de 'almacen' a 'eb_v1_0_2'
 - DB user para de 'almacen_admin' a 'eb_admin'. No se necesita indicar la versión, ya que el nombre de la DB lo contiene.
+- Cambiar el define SITE_PATH por SITE_URL
 
 ### [Nota, para mi]
 - Added para funcionalidades nuevas.
