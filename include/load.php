@@ -12,24 +12,21 @@ define("DS", DIRECTORY_SEPARATOR);
 /* Defining the SITE_ROOT properly
    This is very important, by security */
 if ( !defined('SITE_ROOT') ) {
-	/* === By Yoel.- 2020.05.26 ===
-	 * My understanding:
-	 *
-	 * SITE_ROOT is one level above of the folder "include", 
-	 * this way if INC_PATH = /localhost/include, then
-	 * the SITE_ROOT is deducted as /localhost ... as it 
-	 * should be. 
-	 * Also, this script is SUPPOSED to be always into the 
-	 * folder localhost/includes */
-
-	// my own path (/include)
+	// the include path (e.g. ../include)
 	$INC_PATH = dirname(__FILE__);
-	// then, SITE_ROOT is based in $INC_PATH
+	// SITE_ROOT is based in $INC_PATH
+	// The SITE_ROOT is the fullpath of the site in the host machine. 
+	// It is useful, for example, to require_once(), or include_once() 
+	// sentences.
 	define( "SITE_ROOT", realpath($INC_PATH.'/..') );
 }
 
-//define("SITE_PATH", "EasyBusiness/v1.0.2/");
-define("SITE_PATH", "");
+/* The SITE_PATH, instead, is the URL to this site in the host.
+ * Change this to your needs, we recommend to use the path: 
+ *   /EasyBusiness/v1.0.2/
+ */
+define("SITE_PATH", "/EasyBusiness/v1.0.2/");
+//define("SITE_PATH", "");
 
 defined("INC_ROOT")? null: define("INC_ROOT", realpath(dirname(__FILE__)));
 define("LIB_PATH_INC", INC_ROOT.DS);

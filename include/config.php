@@ -6,7 +6,7 @@
 | Author: Yoel Monsalve
 | mail:   yymonsalve@gmail.com
 | web:    (futurely) www.yoelmonsalve.com
-| 
+|
 | (C) Yoel Monsalve. 2020-2021. All rights reserved.
 |
 |
@@ -24,12 +24,10 @@
 |
 
 */
-define( 'DB_HOST', 'localhost' );       // Set database host
-//define( 'DB_USER', 'root' );          // Set database user --     NEVER, NEVER DO THIS !!!
-//define( 'DB_PASS', 'root' );          // Set database password -- NEVER, NEVER DO THIS !!!
-define( 'DB_NAME', 'almacen' );         // Set database name
-define( 'DB_USER', 'almacen_admin' );   // Set database user
-define( 'DB_PASS', 'admin' );           // Set database password
+define( 'DB_HOST', 'localhost' );    // Set database host
+define( 'DB_NAME', 'eb_v1_0_2' );    // Set database name
+define( 'DB_USER', 'eb_admin' );     // Set database user
+define( 'DB_PASS', 'admin' );        // Set database password
 
 /* TimeZone */
 date_default_timezone_set("America/New_York");    // UTC-4

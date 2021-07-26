@@ -2,7 +2,7 @@
   $page_title = 'Editar Usuario';
   require_once('include/load.php');
   // Checkin What level user has permission to view this page
-   page_require_level(1);
+  page_require_level(1);
 ?>
 <?php
   $e_user = find_by_id('users',(int)$_GET['id']);
@@ -87,11 +87,11 @@ if (isset($_POST['update-pass'])) {
       <div class="panel-body">
         <form method="post" action="edit_user.php?id=<?php echo (int)$e_user['id'];?>" class="clearfix">
           <div class="form-group">
-            <label for="name" class="control-label">Nombres</label>
+            <label for="name" class="control-label">Nombre Completo</label>
             <input type="name" class="form-control" name="name" value="<?php echo remove_junk(ucwords($e_user['name'])); ?>">
           </div>
           <div class="form-group">
-            <label for="username" class="control-label">Usuario</label>
+            <label for="username" class="control-label">Username/Nick</label>
             <input type="text" class="form-control" name="username" value="<?php echo remove_junk($e_user['username']); ?>">
           </div>
           <div class="form-group">

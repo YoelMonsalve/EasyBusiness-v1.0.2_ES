@@ -24,14 +24,14 @@ si el root de mysql no tiene contrasena:
    Esto crea un usuario 'almacen_admin', con password='admin'. Porteriormente, importe el 
    script 'almacen.sql' para reconstruir la información:
     
-       mysql> source scripts/almacen.sql;
+       mysql> source scripts/eb_v1_0_2.sql;
 
 3. Posteriormente, SALGA de la sesión MySQL como root (para prevenir cambios accidentales, 
    lo mejor es permanecer el menor tiempo posible logueado como root en un sistema).
    Usted ya tiene creado el usuario almacen_admin, contraseña admin. Si desea monitorear
    la DB, entre con este usuario!
 
-4. Copiar la carpeta "htdocs" al directorio "C:\xamppp", que es 
+4. Copiar la carpeta "htdocs" al directorio "C:\xampp", que es 
    el directorio por defecto del servidor apache en Windows.
 	
 5. Reiniciar el servicio de MySQL, y encender/reiniciar Apache.
@@ -64,11 +64,11 @@ NOTAS:
    el permiso de escritura en ambos casos.
 
 2. Si desinstala la aplicación, repita los pasos 1 y 2, pero en su lugar ejecute el script
-   'remove_all.sql' que borrará el usuario y destruirá la Base de Datos (Tenga Cuidado!).
+   'remove.sql' que borrará el usuario y destruirá la Base de Datos (Tenga Cuidado!).
    Lo mejor en este caso es exportar primeramente su base de datos, desde la Shell del sistema
    operativo corra:
 
-       $ mysqldump -q -uroot -p --databases almacen > scripts/almacen.sql
+       $ mysqldump -q -uroot -p --databases eb_v1_0_2 > scripts/eb_v1_0_2.sql
 
    lo cual creará un fichero similar al que recibió aquí, pero con sus propios datos de DB.
 
