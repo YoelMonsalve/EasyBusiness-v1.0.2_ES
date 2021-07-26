@@ -36,15 +36,15 @@
       //$query .=" ON DUPLICATE KEY UPDATE name='{$p_name}'";
       if($db->query($query)){
         $session->msg('s',"Producto agregado exitosamente. ");
-        redirect(SITE_PATH.'add_product.php', false);
+        redirect(SITE_URL.'add_product.php', false);
       } else {
         $session->msg('d',' Lo siento, registro falló.' . $db->get_last_error());
         //$session->msg('d',' Lo siento, registro falló.');
-        redirect(SITE_PATH.'products.php', false);
+        redirect(SITE_URL.'products.php', false);
       }
    } else{
      $session->msg("d", $errors);
-     redirect(SITE_PATH.'add_product.php',false);
+     redirect(SITE_URL.'add_product.php',false);
    }
  }
 ?>

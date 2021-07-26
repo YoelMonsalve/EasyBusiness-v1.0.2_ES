@@ -17,11 +17,11 @@
 
       if ($photo->process_user_media($user_id)) {
         //$session->msg('s','Se cambió la imagen.');
-        redirect(SITE_PATH.'edit_account.php');
+        redirect(SITE_URL.'edit_account.php');
       } 
       else {
         $session->msg('d', join($photo->errors));
-        redirect(SITE_PATH.'edit_account.php');
+        redirect(SITE_URL.'edit_account.php');
       }
     }
     //update user other info
@@ -37,21 +37,21 @@
         if ($result) {
           if ($db->affected_rows() === 1) {
             $session->msg('s',"Cuenta actualizada");
-            redirect(SITE_PATH.'edit_account.php', false);
+            redirect(SITE_URL.'edit_account.php', false);
           }
           else {
             $session->msg('s',"No se cambió la cuenta");
-            redirect(SITE_PATH.'edit_account.php', false);
+            redirect(SITE_URL.'edit_account.php', false);
           }
         } 
         else {
           $session->msg('d',' Lo siento, actualización falló');
-          redirect(SITE_PATH.'edit_account.php', false);
+          redirect(SITE_URL.'edit_account.php', false);
         }
       } 
       else {
         $session->msg("d", $errors);
-        redirect(SITE_PATH.'edit_account.php',false);
+        redirect(SITE_URL.'edit_account.php',false);
       }
     }
   }

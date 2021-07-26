@@ -14,7 +14,7 @@ curl -d"id=1&product-name=Filtro de gasolina&partNo=FILT_AB0F01&category=1&locat
   $all_photo = find_all('media');
   if (!$product) {
     $session->msg("d", "Error: No se encontró id de producto.");
-    redirect(SITE_PATH.'products.php');
+    redirect(SITE_URL.'products.php');
   }
 ?>
 
@@ -57,19 +57,19 @@ curl -d"id=1&product-name=Filtro de gasolina&partNo=FILT_AB0F01&category=1&locat
 					/* no row was changed */
 					$session->msg('w', "No se cambió información." );
 				}
-				//redirect(SITE_PATH.'products.php', false);
-        redirect(SITE_PATH.'edit_product.php?id='.$product['id'], false);
+				//redirect(SITE_URL.'products.php', false);
+        redirect(SITE_URL.'edit_product.php?id='.$product['id'], false);
      	}
 			else {
 				/* SQL query error */
     		$session->msg('d',"Lo siento, actualización falló." 
        	. "Message: " . $db->get_last_error( ) 
        	);
-       	redirect(SITE_PATH.'edit_product.php?id='.$product['id'], false);
+       	redirect(SITE_URL.'edit_product.php?id='.$product['id'], false);
       }
    } else{
       $session->msg("d", $errors);
-     	redirect(SITE_PATH.'edit_product.php?id='.$product['id'], false);
+     	redirect(SITE_URL.'edit_product.php?id='.$product['id'], false);
    }
   }
 ?>

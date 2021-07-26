@@ -11,7 +11,7 @@
 <?php
   /* if sale-ID not specified, ... go back */
   if( !isset( $_GET['id'] ) )
-    redirect(SITE_PATH.'sales.php');
+    redirect(SITE_URL.'sales.php');
 
   /* Get sale record, from sale-id */
   $sale = find_by_id('sales',(int)$_GET['id']);
@@ -19,7 +19,7 @@
 
   if(!$sale) {
     $session->msg("d","Sale not found.");
-    redirect(SITE_PATH.'sales.php');
+    redirect(SITE_URL.'sales.php');
   }
   
   /* Get product record, from product-id */
@@ -27,7 +27,7 @@
 
   if(!$product) {
     $session->msg("d","Product not found.");
-    redirect(SITE_PATH.'sales.php');
+    redirect(SITE_URL.'sales.php');
   }
 
   /* Get category_name and media_name */
@@ -86,19 +86,19 @@
         if ( $extra_qty )
           substract_product_qty($extra_qty, $p_id);
         $session->msg('s',"Listo!");
-        redirect(SITE_PATH.'sales.php', false);
+        redirect(SITE_URL.'sales.php', false);
       } else {
         $session->msg( 'd','Operación falló: '.$db->get_last_error() );
         
         /* error */
-        redirect(SITE_PATH.'sales.php', false);
+        redirect(SITE_URL.'sales.php', false);
         //print( "failed" . $db->get_last_error() );
       }
     } else {
       $session->msg("d", $errors);
       
       /* error */
-      redirect(SITE_PATH.'sales.php',false);
+      redirect(SITE_URL.'sales.php',false);
     }
   }
 ?>

@@ -9,7 +9,7 @@
   $categorie = find_by_id('categories',(int)$_GET['id']);
   if (!$categorie) {
     $session->msg("d","Missing categorie id.");
-    redirect(SITE_PATH.'categorie.php', false);
+    redirect(SITE_URL.'categorie.php', false);
   }
 ?>
 
@@ -25,21 +25,21 @@
       if ($result) {
         if ($db->affected_rows() === 1) {
           $session->msg("s", "Categoría actualizada con éxito.");
-          redirect(SITE_PATH.'categorie.php', false);
+          redirect(SITE_URL.'categorie.php', false);
         }
         else {
           $session->msg("w", "No se hicieron cambios");
-          redirect(SITE_PATH.'categorie.php', false); 
+          redirect(SITE_URL.'categorie.php', false); 
         }
       } 
       else {
         $session->msg("d", "Lo siento, actualización falló.");
-        redirect(SITE_PATH.'categorie.php', false);
+        redirect(SITE_URL.'categorie.php', false);
       }
     } 
     else {
       $session->msg("d", $errors);
-      redirect(SITE_PATH.'categorie.php', false);
+      redirect(SITE_URL.'categorie.php', false);
     }
   }
 ?>

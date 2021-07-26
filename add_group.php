@@ -12,10 +12,10 @@
 
     if (find_by_groupName($_POST['group-name']) === false) {
       $session->msg('d','<b>Error!</b> El nombre de grupo realmente existe en la base de datos');
-      redirect(SITE_PATH.'add_group.php', false);
+      redirect(SITE_URL.'add_group.php', false);
     } elseif (find_by_groupLevel($_POST['group-level']) === false) {
       $session->msg('d','<b>Error!</b> El nombre de grupo realmente existe en la base de datos ');
-      redirect(SITE_PATH.'add_group.php', false);
+      redirect(SITE_URL.'add_group.php', false);
     }
     if (empty($errors)) {
       $name = remove_junk($db->escape($_POST['group-name']));
@@ -30,15 +30,15 @@
       if ($db->query($query)) {
         //sucess
         $session->msg('s',"Grupo ha sido creado! ");
-        redirect(SITE_PATH.'groups.php', false);
+        redirect(SITE_URL.'groups.php', false);
       } else {
         //failed
         //$session->msg('d','Lamentablemente no se pudo crear el grupo!');
-        redirect(SITE_PATH.'add_group.php', false);
+        redirect(SITE_URL.'add_group.php', false);
       }
     } else {
       $session->msg("d", $errors);
-      redirect(SITE_PATH.'add_group.php',false);
+      redirect(SITE_URL.'add_group.php',false);
     }
   }
 ?>

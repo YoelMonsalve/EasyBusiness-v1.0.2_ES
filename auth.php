@@ -14,18 +14,18 @@
       //Update Sign in time
        updateLastLogIn($user_id);
        $session->msg("s", "Bienvenido a EASY BUSINESS ___ By Yoel Monsalve, Abril 2021.");
-       redirect(SITE_PATH.'home.php',false);
+       redirect(SITE_URL.'home.php',false);
     } else if ($user_id == -2) {
       $session->msg("w", "Usuario inactivo");
-      redirect(SITE_PATH.'index.php',false); 
+      redirect(SITE_URL.'index.php',false); 
     }
     else {
       $session->msg("d", "Nombre de usuario y/o contraseña incorrecto.");
-      redirect(SITE_PATH.'index.php',false);
+      redirect(SITE_URL.'index.php',false);
     }
   } 
   else {
    $session->msg("d", $errors);
-   redirect(SITE_PATH.'index.php',false);
+   redirect(SITE_URL.'index.php',false);
   }
 ?>

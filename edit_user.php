@@ -9,7 +9,7 @@
   $groups  = find_all('user_groups');
   if(!$e_user){
     $session->msg("d","Missing user id.");
-    redirect(SITE_PATH.'users.php');
+    redirect(SITE_URL.'users.php');
   }
 ?>
 
@@ -29,18 +29,18 @@
       if ($result) {
         if ($db->affected_rows() === 1) {
           $session->msg('s',' Cuenta actualizada');
-          redirect(SITE_PATH.'users.php', false);
+          redirect(SITE_URL.'users.php', false);
         } else {
           $session->msg('w',' No se cambió la información');
-          redirect(SITE_PATH.'edit_user.php?id='.(int)$e_user['id'], false);
+          redirect(SITE_URL.'edit_user.php?id='.(int)$e_user['id'], false);
         }
       } else {
         $session->msg('d',' Error en la transacción con la Base de Datos');
-        redirect(SITE_PATH.'edit_user.php?id='.(int)$e_user['id'], false);
+        redirect(SITE_URL.'edit_user.php?id='.(int)$e_user['id'], false);
       }
     } else {
       $session->msg("d", $errors);
-      redirect(SITE_PATH.'edit_user.php?id='.(int)$e_user['id'],false);
+      redirect(SITE_URL.'edit_user.php?id='.(int)$e_user['id'],false);
     }
   }
 ?>
@@ -59,18 +59,18 @@ if (isset($_POST['update-pass'])) {
     if ($result) {
       if ($db->affected_rows() === 1) {
         $session->msg('s',"Se ha actualizado la contraseña del usuario. ");
-        redirect(SITE_PATH.'edit_user.php?id='.(int)$e_user['id'], false);
+        redirect(SITE_URL.'edit_user.php?id='.(int)$e_user['id'], false);
       } else {
         $session->msg('w',' No se cambió la información');
-        redirect(SITE_PATH.'edit_user.php?id='.(int)$e_user['id'], false);
+        redirect(SITE_URL.'edit_user.php?id='.(int)$e_user['id'], false);
       }
     } else {
       $session->msg('d',' Error en la transacción con la Base de Datos');
-      redirect(SITE_PATH.'edit_user.php?id='.(int)$e_user['id'], false);
+      redirect(SITE_URL.'edit_user.php?id='.(int)$e_user['id'], false);
     }
   } else {
     $session->msg("d", $errors);
-    redirect(SITE_PATH.'edit_user.php?id='.(int)$e_user['id'],false);
+    redirect(SITE_URL.'edit_user.php?id='.(int)$e_user['id'],false);
   }
 }
 ?>

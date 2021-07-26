@@ -21,12 +21,12 @@ if ( !defined('SITE_ROOT') ) {
 	define( "SITE_ROOT", realpath($INC_PATH.'/..') );
 }
 
-/* The SITE_PATH, instead, is the URL to this site in the host.
+/* The SITE_URL, instead, is the URL to this site in the host.
  * Change this to your needs, we recommend to use the path: 
  *   /EasyBusiness/v1.0.2/
  */
-define("SITE_PATH", "/EasyBusiness/v1.0.2/");
-//define("SITE_PATH", "");
+define("SITE_URL", "/EasyBusiness/v1.0.2/");
+//define("SITE_URL", "");
 
 defined("INC_ROOT")? null: define("INC_ROOT", realpath(dirname(__FILE__)));
 define("LIB_PATH_INC", INC_ROOT.DS);

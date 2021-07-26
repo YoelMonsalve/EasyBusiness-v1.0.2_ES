@@ -230,7 +230,7 @@ function page_require_level($required_level)
   /* caution */
   /* === added by Yoel.- 2019.05.23 === */
   if ( !$current_user ) {
-    redirect(SITE_PATH.'/home.php', FALSE);
+    redirect(SITE_URL.'/home.php', FALSE);
     return FALSE;
   }
 
@@ -239,12 +239,12 @@ function page_require_level($required_level)
   // if user is not logged in
   if (!$session->isUserLoggedIn(TRUE)) {
     $session->msg('d','Por favor Iniciar sesión...');
-    redirect(SITE_PATH.'/index.php', FALSE);
+    redirect(SITE_URL.'/index.php', FALSE);
   }
   // if group status is inactive
   elseif($login_group['group_status'] === '0') {
     $session->msg('d','Este nivel de usaurio esta inactivo!');
-    redirect(SITE_PATH.'/home.php',FALSE);
+    redirect(SITE_URL.'/home.php',FALSE);
   }
   // checking for (user level) <= (required level)
   elseif($current_user['user_level'] <= (int)$required_level) {
@@ -252,7 +252,7 @@ function page_require_level($required_level)
   }
   else {
     $session->msg("d", "¡Lo siento! no tienes permiso para ver la página.");
-    redirect(SITE_PATH.'/home.php', FALSE);
+    redirect(SITE_URL.'/home.php', FALSE);
   }
 }
 /*--------------------------------------------------------------*/

@@ -13,7 +13,7 @@
     /* at least one, partNo, or productName is required */
     if ( !validate_fields( array('partNo') ) && !validate_fields( array('product_name') ) ) {
       $session->msg("d", $errors);
-      redirect(SITE_PATH.'add_sale.php', false);
+      redirect(SITE_URL.'add_sale.php', false);
     }
     $req_fields = array( 'quantity','sale_price','total_sale','date' );
     
@@ -24,7 +24,7 @@
         $product = find_product_by_partNo( $_POST['partNo'] );
         if ( !$product || !sizeof($product) ) {
           $session->msg("d", sprintf("No se encontró partNo='%s'", $_POST['partNo'] ) );
-          redirect(SITE_PATH.'add_sale.php', false);
+          redirect(SITE_URL.'add_sale.php', false);
         }
       }
       $p_id = $product['id'];
@@ -51,18 +51,18 @@
         $session->msg('s',"Listo!");
         
         /* error */
-        redirect(SITE_PATH.'add_sale.php', false);
+        redirect(SITE_URL.'add_sale.php', false);
       } else {
         $session->msg( 'd','Operación falló: '.$db->get_last_error() );
         
         /* error */
-        redirect(SITE_PATH.'add_sale.php', false);
+        redirect(SITE_URL.'add_sale.php', false);
       }
     } else {
       $session->msg("d", $errors);
       
       /* error */
-      redirect(SITE_PATH.'add_sale.php',false);
+      redirect(SITE_URL.'add_sale.php',false);
     }
   }
 ?>

@@ -17,7 +17,7 @@
     $e_group = find_by_id('user_groups',(int)$_GET['id']);
     if(!$e_group){
       $session->msg("d","Missing Group id.");
-      redirect(SITE_PATH.'groups.php');
+      redirect(SITE_URL.'groups.php');
     }
   }
 ?>
@@ -47,8 +47,8 @@
         else {
           $session->msg('i',"No se cambio informacion");
         }
-        //redirect(SITE_PATH.'edit_group.php?id='.(int)$e_group['id'], false);
-        redirect(SITE_PATH.'groups.php', false);
+        //redirect(SITE_URL.'edit_group.php?id='.(int)$e_group['id'], false);
+        redirect(SITE_URL.'groups.php', false);
       }
       else {
         //failed
@@ -57,13 +57,13 @@
         /* changed by yoel.- 2020.06.04 */
         $session->msg('w',$db->get_last_error());
         
-        redirect(SITE_PATH.'edit_group.php?id='.(int)$e_group['id'], false);
+        redirect(SITE_URL.'edit_group.php?id='.(int)$e_group['id'], false);
       }
     } 
     else {
       // error in form fields
       $session->msg("d", $errors);
-      redirect(SITE_PATH.'edit_group.php?id='.(int)$e_group['id'], false);
+      redirect(SITE_URL.'edit_group.php?id='.(int)$e_group['id'], false);
     }
   }
 ?>

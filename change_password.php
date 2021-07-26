@@ -15,7 +15,7 @@
 
              if(sha1($_POST['old-password']) !== current_user()['password'] ){
                $session->msg('d', "Tu antigua contraseña no coincide");
-               redirect(SITE_PATH.'change_password.php',false);
+               redirect(SITE_URL.'change_password.php',false);
              }
 
             $id = (int)$_POST['id'];
@@ -25,14 +25,14 @@
                 if($result && $db->affected_rows() === 1):
                   $session->logout();
                   $session->msg('s',"Inicia sesión con tu nueva contraseña.");
-                  redirect(SITE_PATH.'index.php', false);
+                  redirect(SITE_URL.'index.php', false);
                 else:
                   $session->msg('d',' Lo siento, actualización falló.');
-                  redirect(SITE_PATH.'change_password.php', false);
+                  redirect(SITE_URL.'change_password.php', false);
                 endif;
     } else {
       $session->msg("d", $errors);
-      redirect(SITE_PATH.'change_password.php',false);
+      redirect(SITE_URL.'change_password.php',false);
     }
   }
 ?>

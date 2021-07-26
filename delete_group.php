@@ -7,9 +7,9 @@
   $delete_id = delete_by_id('user_groups',(int)$_GET['id']);
   if($delete_id){
       $session->msg("s","Grupo eliminado");
-      redirect(SITE_PATH.'groups.php');
+      redirect(SITE_URL.'groups.php');
   } else {
       $session->msg("d","Eliminación falló");
-      redirect(SITE_PATH.'groups.php');
+      redirect(SITE_URL.'groups.php');
   }
 ?>

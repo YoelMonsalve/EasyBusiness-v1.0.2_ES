@@ -7,9 +7,9 @@
   $delete_id = delete_by_id('users',(int)$_GET['id']);
   if($delete_id){
       $session->msg("s","Usuario eliminado");
-      redirect(SITE_PATH.'users.php');
+      redirect(SITE_URL.'users.php');
   } else {
       $session->msg("d","Se ha producido un error en la eliminación del usuario");
-      redirect(SITE_PATH.'users.php');
+      redirect(SITE_URL.'users.php');
   }
 ?>

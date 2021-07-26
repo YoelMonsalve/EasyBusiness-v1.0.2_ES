@@ -31,13 +31,13 @@
     if (isset($_POST['method']) && $_POST['method'] == "change_image") {
       if (!isset($_POST['media_id'])) {
         $session->msg('d', "Falta ID de imagen");
-        redirect(SITE_PATH.'media.php', false);     /* as it will be reloaded by JS */
+        redirect(SITE_URL.'media.php', false);     /* as it will be reloaded by JS */
         exit;
       }
       $id = $_POST['media_id'];
       if (!is_numeric($id) || ($id = intval($id)) < 1) {
         $session->msg('d', "ID de imagen incorrecto");
-        redirect(SITE_PATH.'media.php', false);     /* as it will be reloaded by JS */
+        redirect(SITE_URL.'media.php', false);     /* as it will be reloaded by JS */
         exit;
       }
 
@@ -45,16 +45,16 @@
 
       if (!$photo->upload($_FILES['file_upload'])) {
         $session->msg('d',join(': ', $photo->errors) );
-        redirect(SITE_PATH.'media.php', false);
+        redirect(SITE_URL.'media.php', false);
         exit;
       }
       if (!$photo->change_product_media($id)) {
         $session->msg('d',join(': ', $photo->errors) );
-        redirect(SITE_PATH.'media.php', false);
+        redirect(SITE_URL.'media.php', false);
         exit;
       } else {
         $session->msg('s','Actualizado');
-        redirect(SITE_PATH.'media.php', false);
+        redirect(SITE_URL.'media.php', false);
         exit;
       }
     }
@@ -68,15 +68,15 @@
        * (preemptive code) */
       if (!$photo->upload($_FILES['file_upload'])) {
         $session->msg('d',join(': ', $photo->errors) );
-        redirect(SITE_PATH.'media.php', false);
+        redirect(SITE_URL.'media.php', false);
       }
 
       if (!$photo->process_product_media()) {
         $session->msg('d',join(': ', $photo->errors) );
-        redirect(SITE_PATH.'media.php', false);
+        redirect(SITE_URL.'media.php', false);
       } else {
         $session->msg('s','Imagen subida al servidor.');
-        redirect(SITE_PATH.'media.php', false);
+        redirect(SITE_URL.'media.php', false);
       }
     }
   }

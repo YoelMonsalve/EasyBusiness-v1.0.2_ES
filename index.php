@@ -1,7 +1,7 @@
 <?php
   ob_start();
   require_once('include/load.php');
-  if($session->isUserLoggedIn(true)) { redirect(SITE_PATH.'home.php', false);}
+  if($session->isUserLoggedIn(true)) { redirect(SITE_URL.'home.php', false);}
 ?>
 <?php include_once('layouts/header.php'); ?>
 <div class="login-page">

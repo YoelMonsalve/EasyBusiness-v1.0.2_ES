@@ -25,15 +25,15 @@
       if ($db->query($query)) {
         //sucess
         $session->msg('s'," Cuenta de usuario ha sido creada");
-        redirect(SITE_PATH.'users.php', false);
+        redirect(SITE_URL.'users.php', false);
       } else {
         //failed
         $session->msg('d',' No se pudo crear la cuenta.');
-        redirect(SITE_PATH.'add_user.php', false);
+        redirect(SITE_URL.'add_user.php', false);
       }
     } else {
       $session->msg("d", $errors);
-      redirect(SITE_PATH.'add_user.php',false);
+      redirect(SITE_URL.'add_user.php',false);
     }
   }
 ?>

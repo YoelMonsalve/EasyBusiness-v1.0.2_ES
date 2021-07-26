@@ -16,14 +16,14 @@
       $sql .= " VALUES ('{$cat_name}')";
       if ($db->query($sql)) {
         $session->msg("s", "Categoría agregada exitosamente.");
-        redirect(SITE_PATH.'categorie.php', false);
+        redirect(SITE_URL.'categorie.php', false);
       } else {
         $session->msg("d", "Lo siento, registro falló");
-        redirect(SITE_PATH.'categorie.php', false);
+        redirect(SITE_URL.'categorie.php', false);
       }
    } else {
      $session->msg("d", $errors);
-     redirect(SITE_PATH.'categorie.php', false);
+     redirect(SITE_URL.'categorie.php', false);
    }
  }
 ?>

@@ -8,9 +8,9 @@
   $photo = new Media();
   if($photo->media_destroy($find_media['id'],$find_media['file_name'])){
     $session->msg("s","Se ha eliminado la foto.");
-    redirect(SITE_PATH.'media.php');
+    redirect(SITE_URL.'media.php');
   } else {
     $session->msg("d","Se ha producido un error en la eliminación de fotografías.");
-    redirect(SITE_PATH.'media.php');
+    redirect(SITE_URL.'media.php');
   }
 ?>

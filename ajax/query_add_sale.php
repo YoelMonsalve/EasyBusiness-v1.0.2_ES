@@ -1,6 +1,6 @@
 <?php
   require_once('../include/load.php');
-  if (!$session->isUserLoggedIn(true)) { redirect(SITE_PATH.'index.php', false);}
+  if (!$session->isUserLoggedIn(true)) { redirect(SITE_URL.'index.php', false);}
 ?>
 
 <?php
