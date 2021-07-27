@@ -88,7 +88,7 @@ CREATE TABLE `media` (
   `file_type` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,7 +227,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Admin User','admin','d033e22ae348aeb5660fc2140aec35850c4da997',1,'lnizqp31.jpg',1,'2021-07-26 18:24:06'),(3,'Normal User','user','12dea96fec20593566ab75692c9949596833adc9',3,'no_image.jpg',1,'2021-07-26 18:03:27'),(17,'Special User','special','ba36b97a41e7faf742ab09bf88405ac04f99599a',2,'no_image.jpg',1,'2021-07-26 18:03:20');
+INSERT INTO `users` VALUES (1,'Admin User','admin','c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec',1,'lnizqp31.jpg',1,'2021-07-27 17:31:23'),(3,'Normal User','user','b14361404c078ffd549c03db443c3fede2f3e534d73f78f77301ed97d4a436a9fd9db05ee8b325c0ad36438b43fec8510c204fc1c1edb21d0941c00e9e2c1ce2',3,'no_image.jpg',1,'2021-07-27 17:04:51'),(17,'Special User','special','98d5f28f0c604d7e34ea730e8dd61a644cf839bd1a56539bbaba0bba78c5529e3eb7002c3985ac7ad5ada28651fa88532b45717729c7cd9958e0e17415e1fcea',2,'no_image.jpg',1,'2021-07-27 17:04:58');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -240,4 +240,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-26 18:34:45
+-- Dump completed on 2021-07-27 18:12:02

@@ -99,7 +99,7 @@ function authenticate($username='', $password='') {
   $result = $db->query($sql);
   if ($db->num_rows($result)) {
     $user = $db->fetch_assoc($result);
-    $password_request = sha1($password);
+    $password_request = hash("sha512", $password);
     if (is_numeric($user['status']) && ($status = intval($user['status'])) > 0) {
       if ($password_request === $user['password'])
         return $user['id'];
@@ -125,7 +125,7 @@ function authenticate_v2($username='', $password='')
   $result = $db->query($sql);
   if ($db->num_rows($result)) {
     $user = $db->fetch_assoc($result);
-    $password_request = sha1($password);
+    $password_request = hash("sha512", $password);
     if (is_numeric($user['status']) && ($status = intval($user['status'])) > 0) {
       if ($password_request === $user['password'])
         return $user['id'];
