@@ -36,6 +36,14 @@ si el root de mysql no tiene contrasena:
 	
 5. Reiniciar el servicio de MySQL, y encender/reiniciar Apache.
 
+6. Definiar la ruta del sitio apropiadamente. En el fichero include/load.php, en la linea
+   donde dice
+   
+   define("SITE_URL", "/EasyBusiness/v1.0.2_ES/");
+
+   cambiar la definicion apropiadamente. Por ejemplo, la definicion actual le permite
+   ejecutar este sistema en la direccion localhost/EasyBusiness/v1.0.2_ES/
+   
 
 NOTAS:
 =======
