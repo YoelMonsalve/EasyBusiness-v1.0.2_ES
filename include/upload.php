@@ -349,15 +349,16 @@ class Media {
 			$this->errors[] = "Falta el archivo de foto.";
 			return false;
  		}
-		if (!$id){
+		if (!$id) {
 		 	$this->errors[] = "Falta ID de foto.";
 		 	return false;
 		}
 		if (delete_by_id('media',$id)) {
 			return unlink($this->productPath.'/'.$this->fileName);
-		} else {
+		}
+    else {
 			$this->error[] = "Se ha producido un error en la eliminación de fotografías.";
-      $this->errors[] = $db->get_last_error();
+      //$this->errors[] = $db->get_last_error();
 			return false;
 		}
   }

@@ -42,14 +42,11 @@ public function db_disconnect()
 /*--------------------------------------------------------------*/
 public function query($sql)
 {
-
   if (trim($sql != "")) {
     $this->query_id = $this->con->query($sql);
   }
   if (!$this->query_id) {
-    //$err_msg = $this->get_last_error();
-    //die("MySQL error: ".$err_msg);
-    //$session->msg("d", $err_msg);
+    /* error in SQL */
     return null;
   }
 

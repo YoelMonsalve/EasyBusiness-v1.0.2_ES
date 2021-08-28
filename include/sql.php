@@ -53,8 +53,13 @@ function delete_by_id($table, $id)
     $sql  = "DELETE FROM ".$db->escape($table);
     $sql .= " WHERE id=". $db->escape($id);
     $sql .= " LIMIT 1";
-    $db->query($sql);
-    return ($db->affected_rows() === 1) ? TRUE : FALSE;
+    $sql_result = $db->query($sql);
+    if ($sql_result) {
+      return ($db->affected_rows() === 1) ? TRUE : FALSE;  
+    }
+    else {
+      return FALSE;
+    }
   }
   return NULL;
 }
