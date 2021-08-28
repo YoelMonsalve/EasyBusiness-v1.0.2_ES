@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2021-08-28
+- Issue #1. `CHARACTER SET` y `COLLATION` mal configurados en el fichero de volcado `eb_v1_0_2.sql`,
+estaban provocando un error de lectura cuando dichos ficheros eran importados por MariaDB/phpMyAdmin.
+
 ## [1.0.2] - 2021-07-27
 ### Changed
 - Cambiar el hash de contraseña de sha1 a sha512
