@@ -27,8 +27,8 @@ if ( !defined('SITE_ROOT') ) {
  *     /EasyBusiness/v1.0.2_ES/
  *     
  */
-//define("SITE_URL", "");
-define("SITE_URL", "/EasyBusiness/v1.0.2_ES/");
+define("SITE_URL", "");
+//define("SITE_URL", "/EasyBusiness/v1.0.2_ES/");
 
 defined("INC_ROOT")? null: define("INC_ROOT", realpath(dirname(__FILE__)));
 define("LIB_PATH_INC", INC_ROOT.DS);
